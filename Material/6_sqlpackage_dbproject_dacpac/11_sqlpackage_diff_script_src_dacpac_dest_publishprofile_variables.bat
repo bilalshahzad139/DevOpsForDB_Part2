@@ -1,0 +1,2 @@
+
+"C:\Program Files (x86)\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"  /Action:Script /SourceFile:bin/debug/MainDBProj.dacpac /Profile:MainDBProj.publish.xml /TargetUser:sa /TargetPassword:12345 /TargetDatabaseName:DevOpsDB3 /OutputPath:"D:\DevOpsDB2\diff.sql" /Variables:DeployDefaultValues=1 /v:DummyVariable=1

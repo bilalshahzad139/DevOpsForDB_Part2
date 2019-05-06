@@ -1,0 +1,2 @@
+
+"C:\Program Files (x86)\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"  /Action:Script /SourceServerName:"localhost\sqlexpress2014" /SourceUser:sa /SourcePassword:12345 /SourceDatabaseName:"MainDBDev"  /TargetServerName:"localhost\sqlexpress2014" /TargetDatabaseName:"MainDBDQA" /TargetUser:sa /TargetPassword:12345 /OutputPath:"D:\DevOpsDB2\diff1.sql"

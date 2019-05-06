@@ -1,0 +1,15 @@
+:setvar dbname "securitydev"
+:setvar dbname2 ""
+:setvar tbname "dbo.users"
+
+print 'hello world $(dbname)'
+
+
+--------
+select * from .dbo.users
+
+select * from $(dbname).dbo.users
+
+select * from $(dbname2).dbo.users
+
+select * from $(tbname)

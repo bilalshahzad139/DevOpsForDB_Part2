@@ -1,0 +1,2 @@
+
+"C:\Program Files (x86)\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"  /Action:Script /SourceFile:bin/debug/SecurityDB.dacpac /Profile:Security_to_QA.publish.xml /TargetUser:sa /TargetPassword:12345 /TargetDatabaseName:SecurityQA /OutputPath:"D:\DevOpsDB2\diff_123.sql"

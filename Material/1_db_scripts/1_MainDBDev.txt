@@ -1,0 +1,54 @@
+create database MainDBDev
+GO
+use MainDBDev
+GO
+
+CREATE TABLE [dbo].[RequestMainData] (
+    [RequestID]       INT           IDENTITY (1, 1) NOT NULL,
+    [CategoryID]      INT           NOT NULL,
+    [UserId]          INT           NOT NULL,
+    [RollNo]          VARCHAR (20)  NOT NULL,
+    [CreationDate]    DATETIME      NULL,
+    [TargetSemester]  INT           NULL,
+    [Reason]          VARCHAR (200) NULL,
+    [TargetDate]      DATE          NULL,
+    [CurrentSemester] INT           NULL,
+    [RequestStatus]   INT           NOT NULL,
+    [Subject]         VARCHAR (50)  NULL,
+    [LastModifiedOn]  DATETIME      NULL,
+    [IsRecievingDone] BIT           DEFAULT ((0)) NULL,
+    [CanStudentEdit]  BIT           DEFAULT ((0)) NULL,
+    [RequestToken]    VARCHAR (40)  NULL,
+    [ReqUniqueId]     VARCHAR (40)  NOT NULL,
+    [ActionDate]      DATETIME      NULL,
+    CONSTRAINT [PK_RequestMainData] PRIMARY KEY CLUSTERED ([RequestID] ASC)
+);
+
+GO
+
+CREATE TABLE [dbo].[FormCategories] (
+    [CategoryID]             INT           NOT NULL,
+    [Category]               VARCHAR (100) NOT NULL,
+    [IsParalApprovalAllowed] BIT           CONSTRAINT [DF__FormCateg__IsPar__29221CFB] DEFAULT ((0)) NOT NULL,
+    [IsRecievingAllowed]     BIT           CONSTRAINT [DF__FormCateg__IsRec__2A164134] DEFAULT ((0)) NOT NULL,
+    [Instructions]           VARCHAR (500) NULL,
+    [MaxPendingRequets]      INT           NULL,
+    CONSTRAINT [PK_FormCategories] PRIMARY KEY CLUSTERED ([CategoryID] ASC)
+);
+
+GO
+
+CREATE TABLE [dbo].[StatusTypes] (
+    [StatusTypeID] INT          NOT NULL,
+    [StatusType]   VARCHAR (20) NOT NULL,
+    CONSTRAINT [PK_StatusTypes] PRIMARY KEY CLUSTERED ([StatusTypeID] ASC)
+);
+
+
+
+GO
+CREATE View dbo.vwBasicUsers
+AS
+Select UserId, Login, Name, Title, Email
+From SecurityDev.dbo.Users
+

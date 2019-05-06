@@ -1,0 +1,2 @@
+
+"C:\Program Files (x86)\Microsoft SQL Server\120\DAC\bin\sqlpackage.exe"  /Action:Publish /SourceFile:"D:\DevOpsDB2\MainDBDev.dacpac"  /TargetServerName:"localhost\sqlexpress2014" /TargetDatabaseName:"MainDBQA" /TargetUser:sa /TargetPassword:12345
